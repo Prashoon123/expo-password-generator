@@ -1,6 +1,7 @@
 {
   "expo": {
-    "name": "password-generator",
+    "name": "Password Generator",
+    "description": "This is a password generator.",
     "slug": "password-generator",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -13,13 +14,13 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
     "android": {
+      "versionCode": 1,
+      "package": "app.web.prashoonapps.passwordgenerator",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
