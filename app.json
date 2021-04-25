@@ -14,11 +14,14 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
     "android": {
+      "permissions": [],
       "versionCode": 1,
       "package": "app.web.prashoonapps.passwordgenerator",
       "adaptiveIcon": {
@@ -28,6 +31,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "githubUrl": "https://github.com/Prashoon123/expo-password-generator"
   }
 }

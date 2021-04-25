@@ -81,9 +81,12 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
-      <Text h3 style={styles.title}>
-        Generate Password
-      </Text>
+
+      <View style={styles.titleContainer}>
+        <Text h3 style={styles.title}>
+          Generate Password
+        </Text>
+      </View>
 
       <View style={styles.generatedPasswordContainer}>
         <Text style={styles.name}>GENERATED PASSWORD</Text>
@@ -106,14 +109,14 @@ export default function App() {
             step={1}
             style={{ width: 200, height: 40, marginLeft: 10, marginRight: 5 }}
             minimumValue={7}
-            maximumValue={32}
+            maximumValue={20}
             minimumTrackTintColor="#104DA4"
             maximumTrackTintColor="#0E2550"
             thumbTintColor="#FFFFFF"
             value={length}
             onValueChange={(value) => setLength(value)}
           />
-          <Text style={styles.text}>32</Text>
+          <Text style={styles.text}>20</Text>
         </View>
       </View>
 
@@ -172,6 +175,8 @@ export default function App() {
         </View>
       </View>
 
+      <View style={{ height: 50 }} />
+
       <View style={styles.buttonContainer}>
         <AnimatedLinearGradient
           colors={["rgb(41, 102, 242)", "rgb(48, 62, 143)"]}
@@ -195,9 +200,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingTop: Platform.OS === "android" ? RNStatusBar.currentHeight : 0,
   },
+  titleContainer: {
+    flex: 0.11,
+    marginTop: "5%"
+  },
   title: {
     color: "white",
-    marginTop: 40,
   },
   name: {
     color: "#2C375B",
@@ -205,9 +213,10 @@ const styles = StyleSheet.create({
   },
   generatedPasswordContainer: {
     alignSelf: "flex-start",
-    marginTop: 30,
+    marginTop: "10%",
     padding: 10,
     width: "100%",
+    flex: 0.30,
   },
   passwordContainer: {
     backgroundColor: "#091741",
@@ -223,9 +232,10 @@ const styles = StyleSheet.create({
   },
   lengthContainer: {
     alignSelf: "flex-start",
-    marginTop: 25,
+    marginTop: "10%",
     padding: 10,
     width: "100%",
+    flex: 0.17,
   },
   rangeContainer: {
     backgroundColor: "#091741",
@@ -238,9 +248,10 @@ const styles = StyleSheet.create({
   },
   settingsContainer: {
     alignSelf: "flex-start",
-    marginTop: 25,
+    marginTop: "20%",
     padding: 10,
     width: "100%",
+    flex: 0.17,
   },
   switchesContainer: {
     backgroundColor: "#091741",
@@ -259,11 +270,12 @@ const styles = StyleSheet.create({
     height: 10,
   },
   buttonContainer: {
-    marginTop: 20,
+    marginTop: "30%",
     width: "100%",
     padding: 20,
     alignItems: "center",
     justifyContent: "center",
+    flex: 0.25,
   },
   button: {
     width: "100%",
