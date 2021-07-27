@@ -1,22 +1,13 @@
-import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import {
-  StyleSheet,
-  View,
-  StatusBar as RNStatusBar,
-  Platform,
-  Animated,
-  TouchableOpacity,
-  // ToastAndroid,
-} from "react-native";
+import { StyleSheet, View, Animated, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { Text } from "react-native-elements";
 import Slider from "@react-native-community/slider";
 import Switches from "react-native-switches";
 import { Button } from "react-native-elements/dist/buttons/Button";
 import { MaterialIcons } from "@expo/vector-icons";
-// import Clipboard from "expo-clipboard";
 import CopyToClipboard from "react-copy-to-clipboard";
+import Toast from "react-native-toast-message";
 
 const AnimatedLinearGradient = Animated.createAnimatedComponent(LinearGradient);
 
@@ -67,21 +58,21 @@ export default function App() {
   };
 
   const copyToClipboard = async () => {
-    // Clipboard.setString(password);
     setCopied(true);
-    alert("Copied to clipboard!");
-    // ToastAndroid.showWithGravityAndOffset(
-    //   "Copied to clipboard!",
-    //   ToastAndroid.SHORT,
-    //   ToastAndroid.BOTTOM,
-    //   25,
-    //   15
-    // );
+    // alert("Copied to clipboard!");
+    Toast.show({
+      type: "success",
+      position: "top",
+      text1: "Copied to clipboard!",
+      visibilityTime: 2000,
+      autoHide: true,
+      topOffset: 5,
+    });
   };
 
   return (
     <View style={styles.container}>
-      <StatusBar style="light" />
+      <Toast ref={(ref) => Toast.setRef(ref)} />
 
       <View style={styles.titleContainer}>
         <Text h3 style={styles.title}>
@@ -201,10 +192,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#050F2E",
     alignItems: "center",
-    paddingTop: Platform.OS === "android" ? RNStatusBar.currentHeight : 0,
   },
   title: {
     color: "white",
+    zIndex: -1,
   },
   name: {
     color: "#2C375B",
@@ -214,6 +205,7 @@ const styles = StyleSheet.create({
     alignSelf: "flex-start",
     padding: 10,
     width: "100%",
+    zIndex: -1,
   },
   passwordContainer: {
     backgroundColor: "#091741",

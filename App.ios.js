@@ -3,8 +3,6 @@ import React, { useState } from "react";
 import {
   StyleSheet,
   View,
-  StatusBar as RNStatusBar,
-  Platform,
   Animated,
   TouchableOpacity,
   SafeAreaView,
@@ -201,7 +199,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#050F2E",
     alignItems: "center",
-    paddingTop: Platform.OS === "android" ? RNStatusBar.currentHeight : 0,
   },
   titleContainer: {
     flex: 0.11,

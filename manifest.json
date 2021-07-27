@@ -7,8 +7,8 @@
   "short_name": "Password Generator",
   "start_url": "/?utm_source=web_app_manifest",
   "orientation": "portrait",
-  "manifest_version": 2,
-  "version": "1.0",
+  "manifest_version": 3,
+  "version": "1.1",
   "related_applications": [
     {
       "platform": "play",
