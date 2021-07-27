@@ -30,7 +30,7 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/icon.png"
     },
     "githubUrl": "https://github.com/Prashoon123/expo-password-generator"
   }

@@ -7,7 +7,7 @@ import {
   Platform,
   Animated,
   TouchableOpacity,
-  ToastAndroid,
+  // ToastAndroid,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { Text } from "react-native-elements";
@@ -15,7 +15,8 @@ import Slider from "@react-native-community/slider";
 import Switches from "react-native-switches";
 import { Button } from "react-native-elements/dist/buttons/Button";
 import { MaterialIcons } from "@expo/vector-icons";
-import Clipboard from "expo-clipboard";
+// import Clipboard from "expo-clipboard";
+import CopyToClipboard from "react-copy-to-clipboard";
 
 const AnimatedLinearGradient = Animated.createAnimatedComponent(LinearGradient);
 
@@ -66,16 +67,16 @@ export default function App() {
   };
 
   const copyToClipboard = async () => {
-    Clipboard.setString(password);
+    // Clipboard.setString(password);
     setCopied(true);
-    // alert("Copied to clipboard!");
-    ToastAndroid.showWithGravityAndOffset(
-      "Copied to clipboard!",
-      ToastAndroid.SHORT,
-      ToastAndroid.BOTTOM,
-      25,
-      15
-    );
+    alert("Copied to clipboard!");
+    // ToastAndroid.showWithGravityAndOffset(
+    //   "Copied to clipboard!",
+    //   ToastAndroid.SHORT,
+    //   ToastAndroid.BOTTOM,
+    //   25,
+    //   15
+    // );
   };
 
   return (
@@ -95,8 +96,10 @@ export default function App() {
             {password}
           </Text>
           <View style={styles.space} />
-          <TouchableOpacity onPress={copyToClipboard}>
-            <MaterialIcons name="content-copy" color="white" size={24} />
+          <TouchableOpacity>
+            <CopyToClipboard text={password} onCopy={copyToClipboard}>
+              <MaterialIcons name="content-copy" color="white" size={24} />
+            </CopyToClipboard>
           </TouchableOpacity>
         </View>
       </View>
@@ -200,10 +203,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingTop: Platform.OS === "android" ? RNStatusBar.currentHeight : 0,
   },
-  titleContainer: {
-    flex: 0.11,
-    marginTop: "5%"
-  },
   title: {
     color: "white",
   },
@@ -213,10 +212,8 @@ const styles = StyleSheet.create({
   },
   generatedPasswordContainer: {
     alignSelf: "flex-start",
-    marginTop: "10%",
     padding: 10,
     width: "100%",
-    flex: 0.30,
   },
   passwordContainer: {
     backgroundColor: "#091741",
@@ -232,10 +229,8 @@ const styles = StyleSheet.create({
   },
   lengthContainer: {
     alignSelf: "flex-start",
-    marginTop: "10%",
     padding: 10,
     width: "100%",
-    flex: 0.17,
   },
   rangeContainer: {
     backgroundColor: "#091741",
@@ -245,13 +240,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
+    padding: 20,
   },
   settingsContainer: {
     alignSelf: "flex-start",
-    marginTop: "20%",
     padding: 10,
     width: "100%",
-    flex: 0.17,
   },
   switchesContainer: {
     backgroundColor: "#091741",
@@ -270,12 +264,11 @@ const styles = StyleSheet.create({
     height: 10,
   },
   buttonContainer: {
-    marginTop: "30%",
     width: "100%",
-    padding: 20,
+    padding: 15,
     alignItems: "center",
     justifyContent: "center",
-    flex: 0.25,
+    marginTop: -50,
   },
   button: {
     width: "100%",

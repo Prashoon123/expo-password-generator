@@ -1,0 +1,26 @@
+{
+  "background_color": "#ffffff",
+  "description": "This is a password generator.",
+  "display": "standalone",
+  "lang": "en",
+  "name": "Password Generator",
+  "short_name": "Password Generator",
+  "start_url": "/?utm_source=web_app_manifest",
+  "orientation": "portrait",
+  "manifest_version": 2,
+  "version": "1.0",
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "http://play.google.com/store/apps/details?id=app.web.prashoonapps.passwordgenerator",
+      "id": "app.web.prashoonapps.passwordgenerator"
+    }
+  ],
+  "prefer_related_applications": true,
+  "icons": { "192": "./pwa/chrome-icon/chrome-icon-192.png" },
+  "browser_action": {
+    "default_icon": "./pwa/chrome-icon/chrome-icon-192.png",
+    "default_popup": "index.html"
+  },
+  "permissions": ["activeTab"]
+}
